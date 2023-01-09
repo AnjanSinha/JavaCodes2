@@ -1,17 +1,22 @@
 public class FirstMethod {
     public static void main(String[] args) {
-
-        calculateScore(true, 800, 5, 100);
-        System.out.println("Executed the calculate method.");
+        boolean gameOver = true;
+        int score = 800;
+        int levelCompleted = 5;
+        int bonus = 100;
+    //calling method by variable arguments
+        System.out.println("Final score is : "+calculateScore(gameOver,score,levelCompleted,bonus));
+    //calling method by literals
+        System.out.println("Final score is : "+calculateScore(true, 800, 5, 100));
     }
-
-    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
+    //Method
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
         int finalScore = score;
 
         if (gameOver) {
             finalScore += (levelCompleted * bonus);
             finalScore +=1000;
-            System.out.println("Your final score was " + finalScore);
         }
+        return finalScore;
     }
 }
